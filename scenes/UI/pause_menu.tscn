@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://c633pv145yp6l"]
+
+[ext_resource type="Script" path="res://scenes/UI/pause_menu.gd" id="1_y31by"]
+[ext_resource type="PackedScene" uid="uid://c58f06gx3styi" path="res://scenes/UI/sound_button.tscn" id="3_2my7p"]
+
+[sub_resource type="Animation" id="Animation_0rgi2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iqrcb"]
+resource_name = "default"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fj2wv"]
+_data = {
+"RESET": SubResource("Animation_0rgi2"),
+"default": SubResource("Animation_iqrcb")
+}
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_y31by")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fj2wv")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.607843, 0.298039, 0.639216, 0.333333)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
+theme_override_font_sizes/font_size = 36
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ResumeButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_2my7p")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_2my7p")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="BackButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_2my7p")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Back"
+
+[node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_2my7p")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit Game"

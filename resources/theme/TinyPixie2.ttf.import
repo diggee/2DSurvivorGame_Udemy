@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bbvfebni4ys48"
+path="res://.godot/imported/TinyPixie2.ttf-1cde5bf7e4e3b920ff81a7f02662c0e8.fontdata"
+
+[deps]
+
+source_file="res://resources/theme/TinyPixie2.ttf"
+dest_files=["res://.godot/imported/TinyPixie2.ttf-1cde5bf7e4e3b920ff81a7f02662c0e8.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=0
+subpixel_positioning=0
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

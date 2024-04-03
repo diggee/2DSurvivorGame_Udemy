@@ -1,0 +1,6 @@
+res://scenes/main/main.tscn
+res://resources/theme/theme.tres
+res://resources/tileset.tres
+res://scenes/UI/vignette.gdshader
+res://scenes/UI/options_menu.tscn
+res://scenes/autoload/music_player.tscn

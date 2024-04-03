@@ -1,0 +1,14 @@
+AnimationPlayer
+VBoxContainer
+AudioStreamPlayer
+CheckButton
+HSlider
+Label
+MarginContainer
+PanelContainer
+CanvasLayer
+Timer
+AudioStreamPlayer2D
+Button
+ColorRect
+Node

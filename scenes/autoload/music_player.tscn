@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://rd643rh7wts5"]
+
+[ext_resource type="Script" path="res://scenes/autoload/music_player.gd" id="1_ifmbb"]
+[ext_resource type="AudioStream" uid="uid://d1bpxmrr4tf7k" path="res://assets/audio/Travelers Notebook.mp3" id="1_mex0r"]
+[ext_resource type="AudioStream" uid="uid://bqrc812nt5loq" path="res://assets/audio/Horroriffic.mp3" id="2_gdupq"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+bus = &"music"
+script = ExtResource("1_ifmbb")
+
+[node name="FirstHalfMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_mex0r")
+volume_db = -10.0
+bus = &"music"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 200.0
+one_shot = true
+autostart = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="SecondHalfMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gdupq")
+volume_db = -10.0
+bus = &"music"
